@@ -12,8 +12,8 @@ export ARCH=arm64
 export SUBARCH=arm64
 # NO WORKS export BUILD_CROSS_COMPILE=~/kernel/toolchain/gcc-linaro-5.5.0-2017.10-i686_aarch64-linux-gnu/bin/aarch64-linux-gnu-gcc
 # export BUILD_CROSS_COMPILE=~/kernel/toolchain/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-
-export BUILD_CROSS_COMPILE=~/kernel/toolchain/aarch64-linux-android-4.9-o-mr1-iot-preview-8/bin/aarch64-linux-android-
-# export BUILD_CROSS_COMPILE=~/kernel/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-
+# export BUILD_CROSS_COMPILE=~/kernel/toolchain/aarch64-linux-android-4.9-o-mr1-iot-preview-8/bin/aarch64-linux-android-
+export BUILD_CROSS_COMPILE=~/kernel/toolchain/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 # NO WORKS export BUILD_CROSS_COMPILE=~kernel/toolchain/arm-eabi-4.8-master/bin/arm-eabi-
 # NO WORKS export BUILD_CROSS_COMPILE=~/kernel/toolchain/arm32_arm64_cross_toolchain-master/bin/aarch64-linux-aarch64-linux-
 # BL - export BUILD_CROSS_COMPILE=~/kernel/toolchain/aarch64-linux-gnu-7.3-master/bin/aarch64-linux-gnu-
@@ -222,6 +222,7 @@ MAIN()
 
 	echo "Your flasheable release can be found in the build folder"
 	echo ""
+	mv $RDIR/builds/$K_NAME-$MODEL-PIE-$K_VERSION-$ZIP_DATE.zip ~/Sync
 }
 
 MAIN2()
@@ -261,10 +262,10 @@ echo "(2) S7 Edge SM-G935F/FD"
 echo "(3) S7 Edge + Flat F/FD"
 echo ""
 echo ""
-read -p "Select an option to compile the kernel " prompt
+# read -p "Select an option to compile the kernel " prompt
 
 
-if [ $prompt == "1" ]; then
+if [ true ]; then
     MODEL=G930
     DEVICE=$S7DEVICE
     KERNEL_DEFCONFIG=$DEFCONFIG_S7FLAT
